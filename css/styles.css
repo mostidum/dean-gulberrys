@@ -1,0 +1,72 @@
+
+/* 
+Colors: 
+Tan: #d7c29b
+Brown: #9e8764
+Dark Brown: #725b3f
+*/
+
+* {
+    font-family: sans-serif;
+    
+    /* cursor: url("assets/poop-emoji.png"), auto;	 */
+}
+
+/* USED TO REMOVE ARROWS FROM "input type=number" - START */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* USED TO REMOVE ARROWS FROM "input type=number" - END */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    column-gap: 30px;
+    box-sizing: border-box;
+    padding: 50px;
+    background-color: #725b3f;
+}
+
+.navbar .links {
+    display: flex;
+    column-gap: 50px;
+    flex-direction: row;
+}
+
+.nav-links {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+.login-form {
+    background-color: #d7c29b;
+    padding: 50px 100px 70px 100px;
+    border-radius: 25px;
+    
+}
+
+input[type=number] {
+    border-radius: .5em;
+    border-color: #9e8764;
+    padding-left: .5em;
+    margin-bottom: 1em;
+    /* Removes arrows from number input field */
+    -moz-appearance: textfield;
+}
+input[type=password] {
+    border-radius: .5em;
+    border-color: #9e8764;
+    padding-left: .5em;
+    margin-bottom: 1em;
+}

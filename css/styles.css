@@ -29,6 +29,7 @@ input::-webkit-inner-spin-button {
     box-sizing: border-box;
     padding: 50px;
     background-color: #725b3f;
+    margin-bottom: 50px;
 }
 
 .navbar .links {

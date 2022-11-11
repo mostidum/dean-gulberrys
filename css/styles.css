@@ -27,7 +27,8 @@ input::-webkit-inner-spin-button {
     /* align-items: center; */
     column-gap: 30px;
     box-sizing: border-box;
-    padding: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
     background-color: #725b3f;
     margin-bottom: 50px;
 }
@@ -36,6 +37,13 @@ input::-webkit-inner-spin-button {
     display: flex;
     column-gap: 50px;
     flex-direction: row;
+    align-items: center;
+}
+
+.navbar img {
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
 }
 
 .nav-links {

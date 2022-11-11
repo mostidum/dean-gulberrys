@@ -12,14 +12,14 @@ Dark Brown: #725b3f
     /* cursor: url("assets/poop-emoji.png"), auto;	 */
 }
 
-/* USED TO REMOVE ARROWS FROM "input type=number" - START */
+/* USED TO REMOVE ARROWS FROM INPUT FIELD - START */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* USED TO REMOVE ARROWS FROM "input type=number" - END */
+/* USED TO REMOVE ARROWS FROM INPUT FIELD - END */
 
 .navbar {
     display: flex;
@@ -53,20 +53,23 @@ input::-webkit-inner-spin-button {
     background-color: #d7c29b;
     padding: 50px 100px 70px 100px;
     border-radius: 25px;
+    justify-content:center;
     
 }
 
-input[type=number] {
+input {
     border-radius: .5em;
-    border-color: #9e8764;
+    border: 3px solid #9e8764;
     padding-left: .5em;
     margin-bottom: 1em;
     /* Removes arrows from number input field */
     -moz-appearance: textfield;
 }
-input[type=password] {
-    border-radius: .5em;
-    border-color: #9e8764;
-    padding-left: .5em;
-    margin-bottom: 1em;
+
+button {
+    color: white;
+    background-color: #725b3f;
+    padding: .5em;
+    border: 0;
+    cursor: pointer;
 }

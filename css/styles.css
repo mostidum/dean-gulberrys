@@ -21,6 +21,15 @@ input::-webkit-inner-spin-button {
 }
 /* USED TO REMOVE ARROWS FROM INPUT FIELD - END */
 
+a {
+    color: #725b3f;
+    font-weight: 700;
+}
+a:hover {
+    color: white;
+    font-weight: 700;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -31,6 +40,10 @@ input::-webkit-inner-spin-button {
     padding-right: 30px;
     background-color: #725b3f;
     margin-bottom: 50px;
+}
+
+.navbar a:hover{
+    color: #d7c29b;
 }
 
 .navbar .links {
@@ -81,4 +94,20 @@ button {
     padding: .5em;
     border: 0;
     cursor: pointer;
+}
+
+button {
+    color: white;
+    background-color: #725b3f;
+    padding: .5em;
+    border: 0;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #d7c29b;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 3px solid #725b3f;
 }

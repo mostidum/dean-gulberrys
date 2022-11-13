@@ -25,7 +25,7 @@
             echo "<h2>User ID: $uid </h2>";
         } 
         else {
-            echo "<h2>You need to sign in!";
+            echo "<h2>You need to sign in!</h2>";
         }
         
     ?>

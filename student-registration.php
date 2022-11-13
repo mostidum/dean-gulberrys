@@ -8,27 +8,17 @@
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="../js/studentRegister.js"></script>
 </head>
-<!-- Navigation Bar starts here -->
-<div class="navbar">
-    <div class="logo">
-        <a href="index.html"><img src="assets/universitySeal.png"></a>
-    </div>
-    <div class="links">
-        <a class="nav-links" href="index.html">Home</a>
-        <a class="nav-links" href="login.html">Login</a>
-        <a class="nav-links" href="student-registration.html">Register</a>
-        <a class="nav-links" href="electronic-student-record.html">ESR</a>
-        <a class="nav-links" href="course-registration.html">Course Registration</a>
-    </div>
-</div>
-<!-- Navigation Bar ends here -->
+    <?php
+        include('includes/nav.php');
+    ?>
 
     <body>
-        <div class="login-container">
-            <div class="login-form">
+        <div class="register-container">
+            <div class="register-form">
                 <h1> Register a new student account</h1>
-                <p>Already have an account? <a href="login.html">Log in</a></p>
-                <form action="index.html">
+                <p>Already have an account? <a href="login.php">Log in</a></p>
+                <form action="student-dashboard.php">
+
                     <label for="username">Username:</label><br>
                     <input type="text" id="username"><br>
                     
@@ -62,4 +52,8 @@
             </div>
         </div>
     </body>
+
+    <?php
+        include('includes/footer.php');
+    ?>
 </html>

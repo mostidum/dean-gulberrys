@@ -17,7 +17,7 @@
         <div class="login-form"> 
             <h2 id>Login Here</h2>
             <p>Don't have an account? <a href="student-registration.php">Register</a></p>
-            <form action="student-dashboard.php">
+            <form action="login-process.php" method="post">
                     <label for="account-type">Choose account type:</label>
                     <select id="account-type" name="account-type">
                     <option value="" disabled selected>Choose Type</option>
@@ -25,10 +25,10 @@
                         <option value="faculty">Faculty</option>
                     </select> <br>
                 <label for="student-id">Student/Faculty ID:</label><br>
-                <input type="number" id="student-id" name="fstudent-id"><br>
+                <input type="number" id="uid" name="uid"><br>
                 <label for="password">Password:</label><br>
                 <input type="password" id="password" name="password"><br>
-                <button type="submit" id="button">Login</button>
+                <button type="submit" id="button" name="submit">Login</button>
             </form>
         </div> 
     </div>

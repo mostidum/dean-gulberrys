@@ -1,3 +1,7 @@
+<?php
+    include_once('includes/dbh.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +14,17 @@
 <body> 
    <?php
         include('includes/nav.php');
-        include_once('includes/dbh.php');
    ?>
     
     <h1>Home page under construction</h1>
+
+    <?php
+        session_start();
+        if(isset($_SESSION["uid"])) {
+            $uid = $_SESSION["uid"];
+        }
+        echo "<h2>User ID: $uid </h2";
+    ?>
 
     <?php
         include('includes/footer.php');

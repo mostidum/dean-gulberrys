@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    include 'includes/session-check.php';
+
     @$search = $_GET['search'];
 ?>
 

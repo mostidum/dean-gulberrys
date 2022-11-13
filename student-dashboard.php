@@ -15,7 +15,7 @@
 <!-- Cards start here-->
     <h1>Welcome to the dashboard</h1>
     <div class="card-container">
-        <a href="course-registration.html">
+        <a href="course-registration.php">
             <div class="card">
                 <h3>Register for Classes</h3>
                 <p>Choose the classes you want for the upcoming semester. View course schedule, date, time, location, professor, and more!</p>

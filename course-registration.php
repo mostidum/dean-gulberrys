@@ -1,7 +1,5 @@
 <?php
-    include_once('includes/dbh.php');
-    $sql = "SELECT * FROM course";
-    $result = $conn->query($sql);   
+    @$search = $_GET['search'];
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +17,33 @@
     ?>
 
     <h1>Courses</h1>
+    <p>
+    <?php 
+        if ($search != "") {
+            echo "You searched for: $search";
+        }
+    ?>
+    </p>
+    <form action="course-registration.php">
+        <label>Search</label>
+        <input type="text" name="search">
+        <input type="submit">
+    </form>
     <?php
+        include_once('includes/dbh.php');
+
+        $query = '%'.$search.'%';
+        //Searches for query in Course Title, Course Description, and Course Department
+        $sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
+        $result = $conn->query($sql);   
+
         while ($row = mysqli_fetch_assoc($result)) {
     ?>
     <table>
         <tr>
             <th>Select</th>
             <th>Course ID</th>
+            <th>Course Title</th>
             <th>Course Description</th>
             <th>Units</th>
             <th>Course Date and Time</th>
@@ -38,6 +56,7 @@
         <tr>
             <td><button>Sign up</button></td>
             <td><?php echo $row["course_id"]?></td>
+            <td><?php echo $row["course_title"]?></td>
             <td><?php echo $row["course_description"]?></td>
             <td><?php echo $row["units"]?></td>
             <td><?php echo $row["datetime"]?></td>

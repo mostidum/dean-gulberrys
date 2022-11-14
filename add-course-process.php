@@ -70,6 +70,7 @@ if (isset($_POST["submit"])){
     exit();
 }
 else {
-
+    header("location: ../index.php");
+    exit();
 }
 ?>

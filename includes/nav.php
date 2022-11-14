@@ -15,14 +15,23 @@
             }
             else{
                 //Display links if user IS logged in
-                echo"
-                <a class=\"nav-links\" href=\"student-dashboard.php\">Student Dashboard</a>
-                <a class=\"nav-links\" href=\"faculty-dashboard.php\">Faculty Dashboard</a>
-                <a class=\"nav-links\" href=\"electronic-student-record.php\">eStudent Record</a>
-                <a class=\"nav-links\" href=\"course-registration.php\">Course Registration</a>
-                <a class=\"nav-links\" href=\"logout.php\">Logout</a>
-                <a class=\"nav-links\" href=\"major-course-requirements.php\">Major Requirements</a>
-                ";
+                if ($_SESSION["account-type"] === "faculty"){
+                    echo"
+                        <a class=\"nav-links\" href=\"faculty-dashboard.php\">Faculty Dashboard</a>
+                        <a class=\"nav-links\" href=\"electronic-student-record.php\">eStudent Record</a>
+                        <a class=\"nav-links\" href=\"logout.php\">Logout</a>";
+                }
+                else if ($_SESSION["account-type"] === "student"){
+                    echo"
+                        <a class=\"nav-links\" href=\"student-dashboard.php\">Student Dashboard</a>
+                        <a class=\"nav-links\" href=\"course-registration.php\">Course Registration</a>
+                        <a class=\"nav-links\" href=\"major-course-requirements.php\">Major Requirements</a>
+                        <a class=\"nav-links\" href=\"logout.php\">Logout</a>";
+                } 
+                else{
+                    echo "<a class=\"nav-links\" href=\"index.php\">Uh oh spagetti-o</a>";
+                }
+                
             }
         ?>
         

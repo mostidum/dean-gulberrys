@@ -9,32 +9,44 @@ if (isset($_POST["submit"])){
     $pwd = $_POST["password"];
 
     if (empty($uid) || empty($pwd)){
-        echo "Something was empty";
         header("location: ../login.php?error= All fields are required");
         exit();
     }
 
-    $rawsql = "SELECT * FROM user WHERE student_id = '$uid' AND `password` = '$pwd'";
+    if (empty($_POST["account-type"])){
+        header("location: ../login.php?error= Account Type Required");
+        exit();
+    }
 
-    $sql = sprintf($rawsql, $uid);
+    if ($_POST["account-type"]){
+        $sql = "SELECT * FROM user WHERE student_id = '$uid' AND `password` = '$pwd'";
+        $accountType = "student";
+    }
+    else {
+        $sql = "SELECT * FROM user WHERE faculty_id = '$uid' AND `password` = '$pwd'";
+        $accountType = "faculty";
+    }
+
     $result = $conn->query($sql);
 
     $user = $result->fetch_assoc();
 
-    var_dump($user);
     if ($user) {
         if ($pwd == $user['password']){
             session_start();
             $_SESSION["uid"] = $uid;
+            $_SESSION["account-type"] = $accountType;
             header("location: ../index.php");
             exit();
         }
         else {
             header("location: ../login.php?error=Incorrect password");
+            exit();
         }
     }
     else {
         header("location: ../login.php?error=No account found");
+        exit();
     }
 
 }

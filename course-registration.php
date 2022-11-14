@@ -1,7 +1,6 @@
 <?php
     session_start();
-    include 'includes/session-check.php';
-
+    include 'includes/session-check-block-faculty.php';
     @$search = $_GET['search'];
 ?>
 

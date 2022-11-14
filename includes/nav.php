@@ -10,7 +10,8 @@
                 //Display links if NOT logged in
                 echo " 
                     <a class=\"nav-links\" href=\"login.php\">Login</a>
-                    <a class=\"nav-links\" href=\"student-registration.php\">Register</a>
+                    <a class=\"nav-links\" href=\"student-registration.php\">Student Register</a>
+                    <a class=\"nav-links\" href=\"faculty-registration.php\">Faculty Register</a>
                     ";
             }
             else{

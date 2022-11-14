@@ -42,4 +42,19 @@
         $sqlUser = "INSERT INTO user (username, password, student_id, faculty_id) VALUES('$username', '$hash', '$lastId', NULL)";
         return mysqli_query($conn, $sqlUser);
     }
+
+    function createFaculty($conn, $username, $password, $name, $position, $phone, $officeNumber, $officeHours, $department) {
+        $sqlFaculty = "INSERT INTO faculty (name, position, phone_number, office_number, office_hours, department) VALUES('$name', '$position', '$phone', '$officeNumber', '$officeHours', '$department')";
+        $resultFaculty = mysqli_query($conn, $sqlFaculty);
+        echo "<script>console.log('Here');</script>";
+        if($resultFaculty === false) {
+            exit();
+        }
+
+        $lastId = $conn->insert_id;
+
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $sqlUser = "INSERT INTO user (username, password, student_id, faculty_id) VALUES('$username', '$hash', NULL, '$lastId')";
+        return mysqli_query($conn, $sqlUser);
+    }
 ?>

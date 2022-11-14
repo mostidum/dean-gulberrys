@@ -41,15 +41,4 @@ if (isset($_POST["submit"])){
 else{
     echo "How'd you get here?";
 }
-
-
-
-?>
-
-
-<?php
-include_once('includes/dbh.php');
-$sql = "SELECT * FROM student";
-$result = $conn->query($sql); 
-
 ?>

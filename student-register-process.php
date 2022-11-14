@@ -62,12 +62,20 @@
 
         //Checks if the username is not already taken in the database
         if(checkTakenUsername($conn, $username) === true){
-            header("location: student-registration.php?error=takenUid");
+            header("location: student-registration.php?error=takenUsername");
             exit();
         }
 
         //Creates a new user in the database
-        createUser($conn, $username, $password, $name, $phone, $address, $birthday);
+        $newUser = createStudent($conn, $username, $password, $name, $phone, $address, $birthday, $major, $minor);
+    
+        if($newUser === true) {
+            header("location: login.php");
+            exit();
+        }
+        else {
+            header("location: student-registration.php?error=couldNotCreateAccount");
+        }
     }
     else {  //If the user did not click the register button to get here, send them back to the sign up page
         header("location: student-registration.php");

@@ -28,13 +28,17 @@
         return true;
     }
     
-    function createUser($conn, $username, $password, $name, $phone, $address, $birthday) {
-        $sql = "INSERT INTO user (username, password, faculty_id) VALUES($username, $password, NULL)";
-        $stmt = mysqli_stmt_init($conn);
-
-        if(!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../student-registration.php?error=stmtfailed");
+    function createStudent($conn, $username, $password, $name, $phone, $address, $birthday, $major, $minor) {
+        $sqlStudent = "INSERT INTO student (name, phone_number, address, birthday, major, minor) VALUES('$name', '$phone', '$address', '$birthday', '$major', '$minor')";
+        $resultStudent = mysqli_query($conn, $sqlStudent);
+        
+        if($resultStudent === false) {
             exit();
         }
+
+        $lastId = $conn->insert_id;
+
+        $sqlUser = "INSERT INTO user (username, password, student_id, faculty_id) VALUES('$username', '$password', '$lastId', NULL)";
+        return mysqli_query($conn, $sqlUser);
     }
 ?>

@@ -32,16 +32,7 @@
         <input type="text" name="search">
         <input type="submit">
     </form>
-    <?php
-        include_once('includes/dbh.php');
 
-        $query = '%'.$search.'%';
-        //Searches for query in Course Title, Course Description, and Course Department
-        $sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
-        $result = $conn->query($sql);   
-
-        while ($row = mysqli_fetch_assoc($result)) {
-    ?>
     <table>
         <tr>
             <th>Select</th>
@@ -57,6 +48,16 @@
             <th>Course Prerequisite(s)</th>
             <th>Instructor ID</th>
         </tr>
+    <?php
+        include_once('includes/dbh.php');
+
+        $query = '%'.$search.'%';
+        //Searches for query in Course Title, Course Description, and Course Department
+        $sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
+        $result = $conn->query($sql);   
+
+        while ($row = mysqli_fetch_assoc($result)) {
+    ?>
         <tr>
             <form action="course-registration-process.php" method="post">
                 <td><button name="sign-up">Sign up</button></td>
@@ -73,10 +74,11 @@
                 <td><?php echo $row["instructor_id"]?></td>
             </form>
         </tr>
+        <?php
+            }
+        ?>
     </table>
-    <?php
-        }
-    ?>
+
 
     <?php
         include('includes/footer.php');

@@ -25,14 +25,14 @@ if (isset($_POST["submit"])){
         $accountType = "faculty";
     }
 
-    $sql = "SELECT * FROM user WHERE username = '$uid' AND `password` = '$pwd'";
+    $sql = "SELECT * FROM user WHERE username = '$uid'";
 
     $result = $conn->query($sql);
 
     $user = $result->fetch_assoc();
 
     if ($user) {
-        if ($pwd == $user['password']){
+        if (password_verify($pwd, $user['password'])){
             session_start();
             $_SESSION["uid"] = $uid;
             $_SESSION["account-type"] = $accountType;

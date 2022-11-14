@@ -38,7 +38,8 @@
 
         $lastId = $conn->insert_id;
 
-        $sqlUser = "INSERT INTO user (username, password, student_id, faculty_id) VALUES('$username', '$password', '$lastId', NULL)";
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $sqlUser = "INSERT INTO user (username, password, student_id, faculty_id) VALUES('$username', '$hash', '$lastId', NULL)";
         return mysqli_query($conn, $sqlUser);
     }
 ?>

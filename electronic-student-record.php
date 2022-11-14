@@ -18,13 +18,7 @@
         include('includes/nav.php');
     ?>
 
-
     <h1>Electronic Student Record</h1>
-    <?php
-        $sql = "SELECT * FROM student";
-        $result = $conn->query($sql);
-        while ($row = mysqli_fetch_assoc($result)) {
-    ?>
     <table>
         <tr>
             <th>Student ID</th>
@@ -37,6 +31,12 @@
             <th>Is a Graduate?</th>
             <th>Additional Notes</th>
         </tr>
+
+    <?php
+        $sql = "SELECT * FROM student";
+        $result = $conn->query($sql);
+        while ($row = mysqli_fetch_assoc($result)) {
+    ?>
         <tr>
             <td><?php echo $row["student_id"]?></td>
             <td><?php echo $row["name"]?></td>
@@ -48,10 +48,11 @@
             <td><?php echo $row["graduate"]?></td>
             <td><?php echo $row["notes"]?></td>
         </tr>
+        <?php
+            }
+        ?>
     </table>
-    <?php
-        }
-    ?>
+    
 
     <?php
         include('includes/footer.php');

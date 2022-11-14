@@ -55,6 +55,7 @@
             <th>Course Location</th>
             <th>Is Graduate Course?</th>
             <th>Course Prerequisite(s)</th>
+            <th>Instructor ID</th>
         </tr>
         <tr>
             <td><button>Sign up</button></td>
@@ -68,6 +69,7 @@
             <td><?php echo $row["location"]?></td>
             <td><?php echo $row["graduate"]?></td>
             <td><?php echo $row["prerequisites"]?></td>
+            <td><?php echo $row["instructor_id"]?></td>
             
         </tr>
     </table>

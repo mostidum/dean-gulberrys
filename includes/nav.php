@@ -5,13 +5,6 @@
     </div>
     <div class="links">
         <a class="nav-links" href="index.php">Home</a>
-        <a class="nav-links" href="login.php">Login</a>
-        <a class="nav-links" href="student-registration.php">Register</a>
-        <a class="nav-links" href="student-dashboard.php">Student Dashboard</a>
-        <a class="nav-links" href="faculty-dashboard.php">Faculty Dashboard</a>
-        <a class="nav-links" href="electronic-student-record.php">eStudent Record</a>
-        <a class="nav-links" href="course-registration.php">Course Registration</a>
-        <a class="nav-links" href="major-course-requirements.php">Major Requirements</a>
         <?php 
             if (!isset($_SESSION["uid"])){
                 //Display links if NOT logged in

@@ -4,6 +4,6 @@
         header("location: ../login.php");
     }
     if ($_SESSION["account-type"] === "student"){
-        header("location: ../index.php");
+        header("location: ../student-dashboard.php");
     }
 ?>

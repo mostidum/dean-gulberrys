@@ -31,17 +31,17 @@
                 
             </div>
         </a>
-        <a href="student-grades.php">
+        <a href="major-course-requirements.php">
             <div class="card">
-                <h3>Check Grades</h3>
-                <p>See how bad you're doing in school right now! Calculate how much you'll need on the final to pass with a C!</p>
+                <h3>Major Course Requirements</h3>
+                <p>Check how many more long, miserable classes you have left in your degree. Look at this to contemplate committing scooter ankle!</p>
+                
             </div>
         </a>
         <a href="#">
             <div class="card">
                 <h3>Do Something</h3>
                 <p>Honestly idek. Click for good luck I guess.</p>
-                
             </div>
         </a>
     </div>

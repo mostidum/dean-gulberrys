@@ -18,14 +18,14 @@ if (isset($_POST["submit"])){
         exit();
     }
 
-    if ($_POST["account-type"]){
-        $sql = "SELECT * FROM user WHERE student_id = '$uid' AND `password` = '$pwd'";
+    if ($_POST["account-type"]){   
         $accountType = "student";
     }
     else {
-        $sql = "SELECT * FROM user WHERE faculty_id = '$uid' AND `password` = '$pwd'";
         $accountType = "faculty";
     }
+
+    $sql = "SELECT * FROM user WHERE username = '$uid' AND `password` = '$pwd'";
 
     $result = $conn->query($sql);
 
@@ -36,8 +36,15 @@ if (isset($_POST["submit"])){
             session_start();
             $_SESSION["uid"] = $uid;
             $_SESSION["account-type"] = $accountType;
-            header("location: ../index.php");
-            exit();
+            if ($accountType == "student"){
+                header("location: ../student-dashboard.php");
+                exit();
+            }
+            else {
+                header("location: ../faculty-dashboard.php");
+                exit();
+            }
+            
         }
         else {
             header("location: ../login.php?error=Incorrect password");

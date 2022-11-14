@@ -142,6 +142,10 @@ table, th, td {
     border: 3px solid var(--brown);
 }
 
+th, td {
+    width: 500px;
+}
+
 .card-container {
     display: flex;
     justify-content: center;

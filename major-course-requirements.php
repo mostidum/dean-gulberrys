@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    include 'includes/session-check.php';
+
+    @$search = $_GET['search'];
+?>
 <!DOCTYPE html>
 <html lang=en>
 <head>

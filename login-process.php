@@ -13,18 +13,6 @@ if (isset($_POST["submit"])){
         exit();
     }
 
-    if (empty($_POST["account-type"])){
-        header("location: ../login.php?error= Account Type Required");
-        exit();
-    }
-
-    if ($_POST["account-type"]){   
-        $accountType = "student";
-    }
-    else {
-        $accountType = "faculty";
-    }
-
     $sql = "SELECT * FROM user WHERE username = '$uid'";
 
     $result = $conn->query($sql);
@@ -35,7 +23,16 @@ if (isset($_POST["submit"])){
         if (password_verify($pwd, $user['password'])){
             session_start();
             $_SESSION["uid"] = $uid;
+
+            //Check if user is a student or faculty
+            if (!is_null($user['student_id'])){   
+                $accountType = "student";
+            }
+            else {
+                $accountType = "faculty";
+            }
             $_SESSION["account-type"] = $accountType;
+
             if ($accountType == "student"){
                 header("location: ../student-dashboard.php");
                 exit();

@@ -26,12 +26,6 @@
                 <input type="text" id="uid" name="uid"><br>
                 <label for="password">Password:</label><br>
                 <input type="password" id="password" name="password"><br>
-                <label for="account-type">Account Type:</label>
-                    <select id="account-type" name="account-type">
-                    <option value="" disabled selected>Choose type</option>
-                        <option value="student">Student</option>
-                        <option value="faculty">Faculty</option>
-                    </select> <br>
                 <button type="submit" id="button" name="submit">Login</button>
             </form>
         </div> 

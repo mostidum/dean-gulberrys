@@ -22,7 +22,7 @@
     <?php
         if(isset($_SESSION["uid"])) {
             $uid = $_SESSION["uid"];
-            echo "<h2>User ID: $uid </h2>";
+            echo "<h2>Username: $uid </h2>";
         } 
         else {
             echo "<h2>You need to sign in!</h2>";

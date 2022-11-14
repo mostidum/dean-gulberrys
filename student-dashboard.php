@@ -30,7 +30,7 @@
                 
             </div>
         </a>
-        <a href="#">
+        <a href="student-grades.php">
             <div class="card">
                 <h3>Check Grades</h3>
                 <p>See how bad you're doing in school right now! Calculate how much you'll need on the final to pass with a C!</p>

@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" src="../js/studentRegister.js"></script>
 </head>
     <?php
         include('includes/nav.php');
+        include('includes/dbh.php');
     ?>
 
     <body>
@@ -17,41 +17,46 @@
             <div class="register-form">
                 <h1> Register a new student account</h1>
                 <p>Already have an account? <a href="login.php">Log in</a></p>
-                <form action="student-dashboard.php">
+                <form action="student-register-process.php" method="post">
 
                     <label for="username">Username:</label><br>
-                    <input type="text" id="username"><br>
+                    <input type="text" name="username"><br>
                     
                     <label for="password">Password:</label><br>
-                    <input type="password" id="password"><br>
+                    <input type="password" name="password"><br>
                     
                     <label for="confirmPass">Confirm Password:</label><br>
-                    <input type="password" id="confirmPass"><br>
+                    <input type="password" name="confirmPass"><br>
                     
                     <label for="name">Name:</label><br>
-                    <input type="text" id="name"><br>
+                    <input type="text" name="name"><br>
 
                     <label for="phone">Phone Number:</label><br>
-                    <input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"><br>
+                    <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"><br>
 
                     <label for="address">Address:</label><br>
-                    <input type="text" id="address"><br>
+                    <input type="text" name="address"><br>
 
                     <label for="birthday">Birthday:</label><br>
-                    <input type="date" id="birthday"><br>
+                    <input type="date" name="birthday"><br>
 
                     <label for="major">Major:</label><br>
-                    <input type="text" id="major"><br>
+                    <input type="text" name="major"><br>
 
                     <label for="minor">Minor:</label><br>
-                    <input type="text" id="minor"><br>
+                    <input type="text" name="minor"><br>
 
-                    <br><button type="submit" id="button" onclick="tests()">Register</button>
+                    <br><button type="submit" name="submit">Register</button>
                     <p1 id="errorMessage"></p1>
                 </form>
             </div>
         </div>
     </body>
+
+    <php>
+
+    </php>
+
 
     <?php
         include('includes/footer.php');

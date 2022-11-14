@@ -1,7 +1,7 @@
 <?php
-    include_once('includes/dbh.php');
-    $sql = "SELECT * FROM student";
-    $result = $conn->query($sql);   
+    session_start();
+    include 'includes/session-check.php';
+    include_once('includes/dbh.php');   
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +21,8 @@
 
     <h1>Electronic Student Record</h1>
     <?php
+        $sql = "SELECT * FROM student";
+        $result = $conn->query($sql);
         while ($row = mysqli_fetch_assoc($result)) {
     ?>
     <table>

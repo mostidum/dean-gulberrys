@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    include 'includes/session-check.php';
+
     @$search = $_GET['search'];
 ?>
 
@@ -52,20 +55,23 @@
             <th>Course Location</th>
             <th>Is Graduate Course?</th>
             <th>Course Prerequisite(s)</th>
+            <th>Instructor ID</th>
         </tr>
         <tr>
-            <td><button>Sign up</button></td>
-            <td><?php echo $row["course_id"]?></td>
-            <td><?php echo $row["course_title"]?></td>
-            <td><?php echo $row["course_description"]?></td>
-            <td><?php echo $row["units"]?></td>
-            <td><?php echo $row["datetime"]?></td>
-            <td><?php echo $row["schedule"]?></td>
-            <td><?php echo $row["department"]?></td>
-            <td><?php echo $row["location"]?></td>
-            <td><?php echo $row["graduate"]?></td>
-            <td><?php echo $row["prerequisites"]?></td>
-            
+            <form action="course-registration-process.php" method="post">
+                <td><button name="sign-up">Sign up</button></td>
+                <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_id"]?></td>
+                <td><?php echo $row["course_title"]?></td>
+                <td><?php echo $row["course_description"]?></td>
+                <td><?php echo $row["units"]?></td>
+                <td><?php echo $row["datetime"]?></td>
+                <td><?php echo $row["schedule"]?></td>
+                <td><?php echo $row["department"]?></td>
+                <td><?php echo $row["location"]?></td>
+                <td><?php echo $row["graduate"]?></td>
+                <td><?php echo $row["prerequisites"]?></td>
+                <td><?php echo $row["instructor_id"]?></td>
+            </form>
         </tr>
     </table>
     <?php

@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Dashboard</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
 </head>
 <body> 
     <?php
@@ -36,7 +36,7 @@
                 <p>Add new courses to the schools course catalog including name, date, id, and more.</p>
             </div>
         </a>
-        <a href="/php/addclass/add-class.php">
+        <a href="/add-class.php">
             <div class="card">
                 <h3>Add Class</h3>
                 <p>Add a new class to the catelog of classes avaliable.</p>

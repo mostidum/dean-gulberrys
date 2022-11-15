@@ -32,7 +32,8 @@
         <input type="submit">
     </form>
 
-    <table>
+    <table table-black>
+        <tbody>
         <tr>
             <th>Select</th>
             <th>Course ID</th>
@@ -60,7 +61,8 @@
        
 
         while($row = mysqli_fetch_assoc($result)) {
-    ?>
+            
+    ?> 
         <tr>
             <form action="course-registration-process.php" method="post">
                 <td><button name="sign-up">Sign up</button></td>
@@ -77,6 +79,7 @@
                 <td><?php echo $row["instructor_id"]?></td>
             </form>
         </tr>
+        </tbody>
         <?php
             }
         ?>

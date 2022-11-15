@@ -19,7 +19,7 @@
     ?>
 
     <h1>Electronic Student Record</h1>
-    <table class="table table-dark">
+    <table class="table">
     <thead>
         <tr>
             <th scope="col">Student ID</th>

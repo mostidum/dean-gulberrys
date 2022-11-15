@@ -54,7 +54,7 @@
             <th scope="col">Course Location</th>
             <th scope="col">Is Graduate Course?</th>
             <th scope="col">Course Prerequisite(s)</th>
-            <th scope="col">Instructor ID</th>
+            <th scope="col">Instructor Name</th>
         </tr>
     </thead>
     <?php

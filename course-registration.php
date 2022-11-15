@@ -36,6 +36,7 @@
     <thead>
         <tr>
             <th scope="col">Select</th>
+            <th scope="col">Record ID</th>
             <th scope="col">Course ID</th>
             <th scope="col">Course Title</th>
             <th scope="col">Course Description</th>
@@ -56,21 +57,16 @@
         //Searches for query in Course Title, Course Description, and Course Department 
         //$sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
         $student_id = $_SESSION["uid"];
-        $sql = "SELECT * FROM course INNER JOIN class on course.course_id = class.course_id;";
+        echo "$student_id";
+        //$sql = "SELECT * FROM course JOIN class ON course.course_id = class.course_id JOIN record ON class.course_id=record.course_id WHERE NOT student_id = '$student_id'";
+        $sql = "SELECT * FROM course JOIN class ON course.course_id = class.course_id JOIN record ON class.course_id=record.course_id WHERE NOT student_id = '$student_id'";
         $result = $conn->query($sql);   
-        
-
-       
-
         while($row = mysqli_fetch_assoc($result)) {
-            $tempid = $_SESSION['uid'];
-            $tempCourseID = $row['course_id'];
-            $temp = "SELECT * FROM record where course_id = '$tempCourseID' and student_id = '$tempID'"
-            //if($temp>0)
     ?> 
         <tr>
             <form action="course-registration-process.php" method="post">
                 <td><button class="btn btn-secondary" name="sign-up">Sign up</button></td>
+                <td><?php echo $row["record_id"]?></td>
                 <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_id"]?></td>
                 <td><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["course_description"]?></td>

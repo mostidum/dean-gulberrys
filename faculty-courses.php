@@ -46,9 +46,9 @@
                 <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["schedule"]?></td>
                 <td><button class="btn btn-secondary" name="see-students">See Students</button></td>
+            </form>
         </tr>
     </tbody>
-</table>
         <?php
             }
         ?>

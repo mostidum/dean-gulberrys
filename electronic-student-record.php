@@ -19,19 +19,21 @@
     ?>
 
     <h1>Electronic Student Record</h1>
-    <table>
+    <table class="table table-dark">
+    <thead>
         <tr>
-            <th>Student ID</th>
-            <th>Student Name</th>
-            <th>Student Phone Number</th>
-            <th>Student Address</th>
-            <th>Student Date of Birth</th>
-            <th>Student Major</th>
-            <th>Student Minor</th>
-            <th>Is a Graduate?</th>
-            <th>Additional Notes</th>
-        </tr>
+            <th scope="col">Student ID</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Student Phone Number</th>
+            <th scope="col">Student Address</th>
+            <th scope="col">Student Date of Birth</th>
+            <th scope="col">Student Major</th>
+            <th scope="col">Student Minor</th>
+            <th scope="col">Is a Graduate?</th>
+            <th scope="col">Additional Notes</th>
 
+        </tr>
+    </thead>
     <?php
         $sql = "SELECT * FROM student";
         $result = $conn->query($sql);

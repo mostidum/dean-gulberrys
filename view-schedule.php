@@ -41,7 +41,7 @@
         $query = '%'.$search.'%';
         //Searches for query in Course Title, Course Description, and Course Department 
         //$sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
-        $sql = "SELECT * FROM course INNER JOIN class on course.course_id = class.course_id";
+        $sql = "SELECT * FROM course INNER JOIN class on course.course_id = class.course_id INNER JOIN faculty on class.instructor_id = faculty.faculty_id INNER JOIN record on course.course_id = record.course_id";
         $result = $conn->query($sql);   
         
 
@@ -55,13 +55,13 @@
                 <td><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["course_description"]?></td>
                 <td><?php echo $row["units"]?></td>
-                <td><?php echo $row["time_start"]?></td>
+                <td><?php echo $row["days"].": ".$row["time_start"]."-".$row["time_end"]?></td>
                 <td><?php echo $row["schedule"]?></td>
                 <td><?php echo $row["department"]?></td>
                 <td><?php echo $row["location"]?></td>
                 <td><?php echo $row["graduate"]?></td>
                 <td><?php echo $row["prerequisites"]?></td>
-                <td><?php echo $row["instructor_id"]?></td>
+                <td><?php echo $row["name"]?></td>
             </form>
         </tr>
         <?php

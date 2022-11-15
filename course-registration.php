@@ -68,7 +68,7 @@
                 <td><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["course_description"]?></td>
                 <td><?php echo $row["units"]?></td>
-                <td><?php echo $row["time_start"]?></td>
+                <td><?php echo $row["days"].": ".$row["time_start"]."-".$row["time_end"]?></td>
                 <td><?php echo $row["schedule"]?></td>
                 <td><?php echo $row["department"]?></td>
                 <td><?php echo $row["location"]?></td>

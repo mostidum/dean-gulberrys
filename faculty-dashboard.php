@@ -36,7 +36,7 @@
                 <p>Add new courses to the schools course catalog including name, date, id, and more.</p>
             </div>
         </a>
-        <a href="#">
+        <a href="/php/addclass/add-class.php">
             <div class="card">
                 <h3>Add Class</h3>
                 <p>Add a new class to the catelog of classes avaliable.</p>

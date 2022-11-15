@@ -26,11 +26,11 @@
         // }
     ?>
     </p>
-    <!-- <form action="course-registration.php">
+    < <form action="course-registration.php">
         <label>Search</label>
         <input type="text" name="search">
         <input type="submit">
-    </form> -->
+    </form> !-->
 
     <table class="table table-dark">
     <thead>

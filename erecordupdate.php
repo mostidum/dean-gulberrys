@@ -1,8 +1,7 @@
 <?php
 
 include 'includes/dbh.php';
-if (isset($_POST["save"])) {
-    $id = $_GET['id'];
+    $id = $_POST['student_id'];
     $name = $_POST['name'];
     $phone_number = $_POST['phone_number'];
     $address = $_POST['address'];
@@ -10,6 +9,7 @@ if (isset($_POST["save"])) {
     $major = $_POST['major'];
     $minor = $_POST['minor'];
 
+    
     if (isset($_POST['graduate'])) {
         $graduate = 1;
     } else {
@@ -20,6 +20,4 @@ if (isset($_POST["save"])) {
     major = '$major',graduate = '$graduate', notes = '$notes' WHERE student_id = '$id'";
     $result = $conn->query($sql);
     header("location:electronic-student-record.php");
-} else {
-    echo "you fucked up";
-}
+ ?>

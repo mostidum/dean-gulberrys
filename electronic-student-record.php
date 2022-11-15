@@ -45,17 +45,18 @@ include_once('includes/dbh.php');
                 while ($row = mysqli_fetch_assoc($result)) {
                     if($row['student_id']== @$_GET['id'])
                     {
-                        echo '<form class = "form-inline m-2" action = "erecordupdate.php?id="'.$row['student_id'].' "method = "post">';
-                        echo "<td>".$row['student_id']."</td>";
+                        echo '<form class = "form-inline m-2" action = "erecordupdate.php" method = "post">';
+                        //echo "<td>".$row['student_id']."</td>";
+                        echo '<td><input type="hidden" name="student_id" value ="'.$row['student_id'].'">'.$row['student_id'].'</td>';
                         echo '<td><input type = "text" class ="form-control" name = "name" value = "'.$row['name'].'"></td>';
-                        echo '<td><input type = "number" class ="form-control" name = "phone_number" value = "'.$row['phone_number'].'"></td>';
+                        echo '<td><input type = "tel" class ="form-control" placeholder = "'.$row['phone_number'].'"name = "phone_number" value = "'.$row['phone_number'].'"></td>';
                         echo '<td><input type = "text" class ="form-control" name = "address" value = "'.$row['address'].'"></td>';
                         echo '<td><input type = "date" class ="form-control" name = "birthday" value = "'.$row['birthday'].'"></td>';
                         echo '<td><input type = "text" class ="form-control" name = "major" value = "'.$row['major'].'"></td>';
                         echo '<td><input type = "text" class ="form-control" name = "minor" value = "'.$row['minor'].'"></td>';
                         echo '<td><input type = "checkbox" class = "form control" name = "graduate" value ="'.$row['graduate'].'"></td>';
                         echo '<td><input type = "text" class = "form control" name = notes ="'.$row['notes'].'"></td>';
-                        echo '<td><button type ="submit" class = "btn btn-primary" name = "save">Save</button></td>';
+                        echo '<td><button type ="submit" class = "btn btn-primary" name = "gang">Save</button></td>';
                         echo '</form>';
                     }
                     else

@@ -24,6 +24,7 @@
     <table>
         <tr>
             <th>Select</th>
+            <th>Grade</th>
             <th>Course ID</th>
             <th>Course Title</th>
             <th>Course Description</th>
@@ -53,6 +54,7 @@
         <tr>
             <form action="remove-class.php" method="post">
                 <td><button name="sign-up">remove</button></td>
+                <td><?php echo $row["grade"]?></td>
                 <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_id"]?></td>
                 <td><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["course_description"]?></td>

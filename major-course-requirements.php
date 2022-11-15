@@ -20,45 +20,58 @@
 <!-- Card starts here -->
 <h1>Majors</h1>
 
-<table class="table table-dark">
+<table class="table ">
     <thead>
         <tr>
+            
             <th scope="col">Student Name</th>
             <th scope="col">Student ID</th>
             <th scope="col">Major ID</th>
             <th scope="col">Major Title</th>
             <th scope="col">Department</th>
             <th scope="col">Units Required</th>
-            <th scope="col">Courses</th>
-            <th scope="col">Outline ID</th>
         </tr>
-    </thead>
+    </thead> 
 
 <?php
         include_once('includes/dbh.php');
         $uid = $_SESSION["uid"];
 
-        $sql = "SELECT student.name as student_name, student.student_id, major_id, major.name, major.units, major.department, major.outline_id  FROM student JOIN major ON student.major=major.department WHERE student_id=$uid";
+        $sql = "SELECT student.name as student_name, student.student_id, major_id, major.name, major.units, major.department, major.outline_id  FROM student JOIN major ON student.major=major.department WHERE student.student_id='$uid'";
         $result = $conn->query($sql);   
 
         while ($row = mysqli_fetch_assoc($result)) {
     ?>
+    <tbody>
         <tr>
             <td><?php echo $row["student_name"]?></td>
             <td><?php echo $row["student_id"]?></td>
             <td><?php echo $row["major_id"]?></td>
             <td><?php echo $row["name"]?></td>
-            <td><?php echo $row["units"]?></td>
             <td><?php echo $row["department"]?></td>
-            <td><button class="btn btn-secondary">Courses</button></td>
-            <td><?php echo $row["outline_id"]?></td>
+            <td><?php echo $row["units"]?></td>
             
         </tr>
-    
+    </tbody>     
     <?php
         }
     ?>
     </table>
+
+<h1>Majors</h1>
+
+<table class="table ">
+    <thead>
+        <tr>
+            
+            <th scope="col">Student Name</th>
+            <th scope="col">Student ID</th>
+            <th scope="col">Major ID</th>
+            <th scope="col">Major Title</th>
+            <th scope="col">Department</th>
+            <th scope="col">Units Required</th>
+        </tr>
+    </thead> 
 
 <!-- Card ends here -->
     <?php

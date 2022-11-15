@@ -28,7 +28,7 @@ include('includes/nav.php');
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Add
+                        <h4>Add Course
                             <a href="index.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -82,7 +82,7 @@ include('includes/nav.php');
                                 <input type="text" name="semester" class="form-control">
                             </div>
                             <div class="mb-2">
-                                <button type="submit" name="save_class" class="btn btn-primary">Save Student</button>
+                                <button type="submit" name="save_class" class="btn btn-primary">Save Course</button>
                             </div>
 
                         </form>

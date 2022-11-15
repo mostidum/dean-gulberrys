@@ -86,7 +86,16 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                            <input type="text" name="major" class="form-control" />
+                                            <select name="major" class="form-control">
+                                                <option></option>
+                                                <?php
+                                                    $sql = "SELECT * FROM major";
+                                                    $result = mysqli_query($conn, $sql);
+                                                    while($row = mysqli_fetch_array($result)){
+                                                        echo "<option>" .$row['department']. "</option>";
+                                                    }
+                                                ?>
+                                            </select>
                                             <label class="form-label" for="major">Major</label>
                                             </div>
                                         </div>
@@ -94,7 +103,16 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                            <input type="text" name="minor" class="form-control" />
+                                            <select name="minor" class="form-control">
+                                                <option></option>
+                                                <?php
+                                                    $sql = "SELECT * FROM minor";
+                                                    $result = mysqli_query($conn, $sql);
+                                                    while($row = mysqli_fetch_array($result)){
+                                                        echo "<option>" .$row['department']. "</option>";
+                                                    }
+                                                ?>
+                                            </select>
                                             <label class="form-label" for="minor">Minor</label>
                                             </div>
                                         </div>

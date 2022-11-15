@@ -2,7 +2,7 @@
     session_start();
     require_once "includes/dbh.php";
 
-    if (isset($_POST["save"])){
+    if (isset($_POST["edit-grades"])){
 
         $grade = $_POST["grade"];
         $studentID = $_POST["student-id"];

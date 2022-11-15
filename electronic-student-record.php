@@ -17,7 +17,7 @@ include_once('includes/dbh.php');
 
 <body>
     <?php
-    include('includes/nav.php');
+        include('includes/nav.php');
     ?>
 
     <h1>Electronic Student Record</h1>

@@ -49,7 +49,7 @@
             <div class="card-body">
                 <h5 class="card-title">Edit Grades</h5>
                 <p class="card-text">Edit student grades.</p>
-                <form action="#">
+                <form action="faculty-courses.php">
                     <button class="btn btn-outline-dark btn-lg px-5" type="submit" id="button" name="submit">Go</button>
                 </form>
             </div>

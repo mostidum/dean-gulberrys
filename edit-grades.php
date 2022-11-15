@@ -1,7 +1,10 @@
 <?php
     session_start();
     include 'includes/session-check-block-student.php';
-    @$search = $_GET['search'];
+    if (!isset($_POST["see-students"])){
+        header("location: ../faculty-courses.php");
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -19,34 +22,20 @@
     ?>
 
     <h1>Courses</h1>
-    <p>
-    <?php 
-        if ($search != "") {
-            echo "You searched for: $search";
-        }
-    ?>
-    </p>
-    <form action="course-registration.php">
-        <label>Search</label>
-        <input type="text" name="search">
-        <input type="submit">
-    </form>
-
-    <table class="table table-dark">
+<table class="table table-dark">
     <thead>
         <tr>
             <th scope="col">Student Name</th>
-            <th scope="col">Grade</th>
-            <th scope="col">Select Course</th>
+            <th scope="col">Current Grade</th>
+            <th scope="col">New Grade</th>
+            <th scope="col"></th>
         </tr>
   </thead>
     <?php
         include_once('includes/dbh.php');
-
-        $uid = $_SESSION["uid"];
-
         $courseID = $_POST["course-id"];
-        $sql = "SELECT * FROM record JOIN student WHERE course_id = '$courseID'";
+        
+        $sql = "SELECT * FROM record JOIN student ON record.student_id=student.student_id WHERE course_id = '$courseID'";
         $result = $conn->query($sql);   
 
         while ($row = mysqli_fetch_assoc($result)) {
@@ -54,13 +43,14 @@
         
     <tbody>
         <tr>
-            <form action="#" method="post">
-                <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_title"]?></td>
-                <td><?php echo $row["grade"]?></td>
-                <td><button class="btn btn-secondary" name="edit-grades">Edit Grades</button></td>
+            <form action="edit-grades-process.php" method="post">
+                <td><input type="hidden" value=<?php echo $row["student_id"]?> name="student-id"><?php echo $row["name"]?></td>
+                <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course_id"><?php echo $row["grade"]?></td>
+                <td><input class="form-control" name="grade" placeholder="Enter new grade..."></td>
+                <td><button class="btn btn-secondary" name="edit-grades">Submit New Grade</button></td>
+            </form>
         </tr>
     </tbody>
-</table>
         <?php
             }
         ?>

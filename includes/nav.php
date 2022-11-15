@@ -38,7 +38,6 @@
                     echo"
                         <a class=\"nav-link\" href=\"student-dashboard.php\">Student Dashboard</a>
                         <a class=\"nav-link\" href=\"course-registration.php\">Course Registration</a>
-                        <a class=\"nav-link\" href=\"major-course-requirements.php\">Major Requirements</a>
                         <a class=\"nav-link\" href=\"logout.php\">Logout</a>";
                 } 
                 else{

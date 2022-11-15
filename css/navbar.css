@@ -1,0 +1,31 @@
+/* .navbar {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: var(--darkBrown);
+} */
+
+.navbar a:hover{
+    color:  var(--tan);
+}
+
+.navbar .links {
+    display: flex;
+    column-gap: 50px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar img {
+    box-sizing: border-box;
+    width: 10%;
+    height: 10%;
+}
+
+/* .nav-links {
+    color: white;
+    text-decoration: none;
+} */

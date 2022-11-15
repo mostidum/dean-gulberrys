@@ -40,19 +40,18 @@ a:hover {
     font-weight: 700;
 }
 
-.navbar {
+/* .navbar {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     column-gap: 30px;
     box-sizing: border-box;
     padding-left: 30px;
     padding-right: 30px;
     background-color: var(--darkBrown);
     margin-bottom: 50px;
-}
+} */
 
-.navbar a:hover{
+/* .navbar a:hover{
     color:  var(--tan);
 }
 
@@ -67,12 +66,12 @@ a:hover {
     box-sizing: border-box;
     width: 100px;
     height: 100px;
-}
+} */
 
-.nav-links {
+/* .nav-links {
     color: white;
     text-decoration: none;
-}
+} */
 
 .login-container {
     display: flex;
@@ -173,13 +172,12 @@ th, td {
     min-height: 150px;
 }
 
-.footer {
+/* .footer {
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* align-items: center; */
     column-gap: 30px;
     box-sizing: border-box;
     padding-top: 10px;
@@ -191,5 +189,4 @@ th, td {
     box-sizing: border-box;
     width: 100px;
     height: 100px;
-}
-
+} */

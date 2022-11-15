@@ -2,6 +2,11 @@
 session_start();
 include 'includes/session-check-block-student.php';
 include 'includes/dbh.php';
+session_start();
+
+    if (!isset($_SESSION["uid"])){
+        header("location: ../login.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

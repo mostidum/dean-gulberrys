@@ -6,47 +6,50 @@
         header("location: ../login.php");
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Dashboard</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Student Dashboard</title>
 </head>
 <body> 
     <?php
         include('includes/nav.php');
     ?>
     
-<!-- Cards start here-->
-    <h1>Welcome to the dashboard</h1>
-    <div class="card-container">
-        <a href="student-registration.php">
-            <div class="card">
-                <h3>Register a Student</h3>
-                <p>Give a new student credentials and get them ready to go for school!</p>
-                
+<div class="container d-flex justify-content-center align-items-center mt-4">
+    <div class="row row-cols-1 row-cols-md-2 g-4 mx-auto ">
+        <div class="col">
+            <div class="card h-100">
+            <div class="card-body stretch-link">
+                <h5 class="card-title">Add Course</h5>
+                <p class="card-text">Add new courses to the schools course catalog including name, date, id, and more.</p>
+                <form action="add-course.php">
+                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" id="button" name="submit">Go</button>
+                </form>
             </div>
-        </a>
-        <a href="add-course.php">
-            <div class="card">
-                <h3>Add Courses</h3>
-                <p>Add new courses to the schools course catalog including name, date, id, and more.</p>
             </div>
-        </a>
-        <a href="/php/addclass/add-class.php">
-            <div class="card">
-                <h3>Add Class</h3>
-                <p>Add a new class to the catelog of classes avaliable.</p>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Add Class</h5>
+                <p class="card-text">Add a new class for the current schedule.</p>
+                <form action="add-class.php">
+                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" id="button" name="submit">Go</button>
+                </form>
             </div>
-        </a>
+            </div>
+        </div>
     </div>
-<!-- Cards end here-->
+</div>
 
-    <?php
-        include('includes/footer.php');
-    ?>
+
+<?php
+    include('includes/footer.php');
+?>
 </body>
 </html>

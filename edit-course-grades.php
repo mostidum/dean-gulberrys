@@ -35,8 +35,8 @@
     <table class="table table-dark">
     <thead>
         <tr>
-            <th scope="col">Course Title</th>
-            <th scope="col">Schedule #</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Grade</th>
             <th scope="col">Select Course</th>
         </tr>
   </thead>
@@ -45,8 +45,8 @@
 
         $uid = $_SESSION["uid"];
 
-        $query = '%'.$search.'%';
-        $sql = "SELECT * FROM class JOIN course ON class.course_id=course.course_id WHERE class.instructor_id = '$uid'";
+        $courseID = $_POST["course-id"];
+        $sql = "SELECT * FROM record JOIN student WHERE course_id = '$courseID'";
         $result = $conn->query($sql);   
 
         while ($row = mysqli_fetch_assoc($result)) {
@@ -54,10 +54,10 @@
         
     <tbody>
         <tr>
-            <form action="edit-course-grades.php" method="post">
+            <form action="#" method="post">
                 <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_title"]?></td>
-                <td><?php echo $row["schedule"]?></td>
-                <td><button class="btn btn-secondary" name="edit-grades">See Students</button></td>
+                <td><?php echo $row["grade"]?></td>
+                <td><button class="btn btn-secondary" name="edit-grades">Edit Grades</button></td>
         </tr>
     </tbody>
 </table>

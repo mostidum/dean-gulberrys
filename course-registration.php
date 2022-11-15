@@ -19,42 +19,44 @@
     ?>
 
     <h1>Courses</h1>
-    <p>
+    <!-- <p>
     <?php 
-        if ($search != "") {
-            echo "You searched for: $search";
-        }
+        // if ($search != "") {
+        //     echo "You searched for: $search";
+        // }
     ?>
     </p>
-    <form action="course-registration.php">
+    <!-- <form action="course-registration.php">
         <label>Search</label>
         <input type="text" name="search">
         <input type="submit">
-    </form>
+    </form> -->
 
-    <table table-black>
-        <tbody>
+    <table class="table table-dark">
+    <thead>
         <tr>
-            <th>Select</th>
-            <th>Course ID</th>
-            <th>Course Title</th>
-            <th>Course Description</th>
-            <th>Units</th>
-            <th>Course Date and Time</th>
-            <th>Schedule Number</th>
-            <th>Course Department</th>
-            <th>Course Location</th>
-            <th>Is Graduate Course?</th>
-            <th>Course Prerequisite(s)</th>
-            <th>Instructor ID</th>
+            <th scope="col">Select</th>
+            <th scope="col">Course ID</th>
+            <th scope="col">Course Title</th>
+            <th scope="col">Course Description</th>
+            <th scope="col">Units</th>
+            <th scope="col">Course Date and Time</th>
+            <th scope="col">Schedule Number</th>
+            <th scope="col">Course Department</th>
+            <th scope="col">Course Location</th>
+            <th scope="col">Is Graduate Course?</th>
+            <th scope="col">Course Prerequisite(s)</th>
+            <th scope="col">Instructor ID</th>
         </tr>
+    </thead>
     <?php
         include_once('includes/dbh.php');
 
-        $query = '%'.$search.'%';
+        //$query = '%'.$search.'%';
         //Searches for query in Course Title, Course Description, and Course Department 
         //$sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
-        $sql = "SELECT * FROM course INNER JOIN class on course.course_id = class.course_id";
+        $student_id = $_SESSION["uid"];
+        $sql = "SELECT * FROM course INNER JOIN class on course.course_id = class.course_id;";
         $result = $conn->query($sql);   
         
 
@@ -68,8 +70,8 @@
     ?> 
         <tr>
             <form action="course-registration-process.php" method="post">
-                <td><button name="sign-up">Sign up</button></td>
-                <td><input type="hidden" value=<?php echo $row["class_id"]?> name="course-id"><?php echo $row["course_id"]?></td>
+                <td><button class="btn btn-secondary" name="sign-up">Sign up</button></td>
+                <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_id"]?></td>
                 <td><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["course_description"]?></td>
                 <td><?php echo $row["units"]?></td>

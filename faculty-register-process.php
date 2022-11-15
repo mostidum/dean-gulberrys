@@ -60,6 +60,11 @@
             header("location: faculty-registration.php?error=invalidPass");
             exit();
         }
+        if(validDepartment($department) === false) {
+            echo $department;
+            header("location: faculty-registration.php?error=chooseDepartment");
+            exit();
+        }
 
         
         //Makes sure that the password and confirm password match

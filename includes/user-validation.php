@@ -28,6 +28,10 @@
         return true;
     }
 
+    function validDepartment($department){
+        return $department != "-- Select Department --";
+    }
+
     function createStudent($conn, $username, $password, $name, $phone, $address, $birthday, $major, $minor) {
         $sqlStudent = "INSERT INTO student (name, phone_number, address, birthday, major, minor) VALUES('$name', '$phone', '$address', '$birthday', '$major', '$minor')";
         $resultStudent = mysqli_query($conn, $sqlStudent);

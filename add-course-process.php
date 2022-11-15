@@ -58,10 +58,10 @@ if (isset($_POST["submit"])){
                 VALUES ('$abrv', 
                 '$courseTitle', 
                 '$courseDescription',
-                 '$courseUnits',
-                        '$courseDepartment',
-                        '$graduate',
-                         '$coursePrereqs')";
+                '$courseUnits',
+                '$courseDepartment',
+                '$graduate',
+                '$coursePrereqs')";
 
     $result = $conn->query($sql);
 

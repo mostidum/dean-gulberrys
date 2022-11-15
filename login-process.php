@@ -22,14 +22,15 @@ if (isset($_POST["submit"])){
     if ($user) {
         if (password_verify($pwd, $user['password'])){
             session_start();
-            $_SESSION["uid"] = $uid;
 
             //Check if user is a student or faculty
             if (!is_null($user['student_id'])){   
                 $accountType = "student";
+                $_SESSION["uid"] = $user['student_id'];
             }
             else {
                 $accountType = "faculty";
+                $_SESSION["uid"] = $user['faculty_id'];
             }
             $_SESSION["account-type"] = $accountType;
 

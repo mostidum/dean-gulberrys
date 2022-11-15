@@ -35,7 +35,7 @@ include_once('includes/dbh.php');
                         <th scope="col">Student Minor</th>
                         <th scope="col">Is a Graduate?</th>
                         <th scope="col">Additional Notes</th>
-                        <th scope="col"></th>
+                        <th scope="col" style="min-width: 120px;"></th>
 
                     </tr>
                 </thead>
@@ -68,18 +68,20 @@ include_once('includes/dbh.php');
                     {
                 ?>
                     <tr>
-                        
-                            <td><?php echo $row["student_id"] ?></td>
-                            <td><?php echo $row["name"] ?></td>
-                            <td><?php echo $row["phone_number"] ?></td>
-                            <td><?php echo $row["address"] ?></td>
-                            <td><?php echo $row["birthday"] ?></td>
-                            <td><?php echo $row["major"] ?></td>
-                            <td><?php echo $row["minor"] ?></td>
-                            <td><?php echo $row["graduate"] ?></td>
-                            <td><?php echo $row["notes"] ?></td>
-                            <td><a class="btn btn-secondary" href = "electronic-student-record.php?id=<?php echo $row['student_id'];?>">Edit Student</button></td>
-                        
+                        <td><?php echo $row["student_id"] ?></td>
+                        <td><?php echo $row["name"] ?></td>
+                        <td><?php echo $row["phone_number"] ?></td>
+                        <td><?php echo $row["address"] ?></td>
+                        <td><?php echo $row["birthday"] ?></td>
+                        <td><?php echo $row["major"] ?></td>
+                        <td><?php echo $row["minor"] ?></td>
+                        <td><?php echo $row["graduate"] ?></td>
+                        <td><?php echo $row["notes"] ?></td>
+                        <td>
+                            <form class="form-inline m-2" action="electronic-student-record.php?id=<?php echo $row['student_id'];?>" method = "post">
+                                <button type="submit" class="btn btn-secondary" name="edit-student">Edit Student</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php
                 }

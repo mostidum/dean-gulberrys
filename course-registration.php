@@ -61,16 +61,19 @@
        
 
         while($row = mysqli_fetch_assoc($result)) {
-            
+            $tempid = $_SESSION['uid'];
+            $tempCourseID = $row['course_id'];
+            $temp = "SELECT * FROM record where course_id = '$tempCourseID' and student_id = '$tempID'"
+            //if($temp>0)
     ?> 
         <tr>
             <form action="course-registration-process.php" method="post">
                 <td><button name="sign-up">Sign up</button></td>
-                <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_id"]?></td>
+                <td><input type="hidden" value=<?php echo $row["class_id"]?> name="course-id"><?php echo $row["course_id"]?></td>
                 <td><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["course_description"]?></td>
                 <td><?php echo $row["units"]?></td>
-                <td><?php echo $row["days"].": ".$row["time_start"]."-".$row["time_end"]?></td>
+                <td><?php echo $row["time_start"]?></td>
                 <td><?php echo $row["schedule"]?></td>
                 <td><?php echo $row["department"]?></td>
                 <td><?php echo $row["location"]?></td>

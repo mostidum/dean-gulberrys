@@ -2,22 +2,16 @@
 require_once "includes/dbh.php";
 
 if (isset($_POST["submit"])){
-    $courseID = $_POST["course-id"];
     $courseTitle = $_POST["course-title"];
     $courseDescription = $_POST["course-description"];
     $courseUnits = $_POST["units"];
-    $courseDateTime = $_POST["date-time"];
-    $courseScheduleNum = $_POST["schedule"];
     $courseDepartment = $_POST["department"];
-    $courseLocation = $_POST["location"];
-    $courseIsGraduate = $_POST["graduate"];
     $coursePrereqs = $_POST["prerequisites"];
-    $courseInstructorID = $_POST["instructor-id"];
+    $courseIsGraduate = $_POST["graduate"];
+    $courseNumber = $_POST["course-number"];
+    $graduate;
+    $abrv;
 
-    if (empty($courseID)) {
-        header("location: ../add-course.php?error= Course ID empty");
-        exit();
-    }
     if (empty($courseTitle)) {
         header("location: ../add-course.php?error= Course title empty");
         exit();
@@ -30,41 +24,50 @@ if (isset($_POST["submit"])){
         header("location: ../add-course.php?error= Course units empty");
         exit();
     }
-    if (empty($courseDateTime)) {
-        header("location: ../add-course.php?error= Course datetime empty");
-        exit();
-    }
-    if (empty($courseScheduleNum)) {
-        header("location: ../add-course.php?error= Course schedule num empty");
-        exit();
-    }
     if (empty($courseDepartment)) {
         header("location: ../add-course.php?error= Course department empty");
         exit();
     }
-    if (empty($courseLocation)) {
-        header("location: ../add-course.php?error= Course location empty");
+    if (empty($courseNumber)) {
+        header("location: ../add-course.php?error= Course number empty");
         exit();
     }
-    if (empty($courseIsGraduate)) {
-        header("location: ../add-course.php?error= Course is graduate empty");
+
+    if(isset($_POST[$courseIsGraduate])) {
+        $graduate = 1;
+    }
+    else {
+        $graduate = 0;
+    }
+
+    $sql = "SELECT COUNT(*) FROM course WHERE course_title = '$courseTitle';";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    if($row['COUNT(*)'] != 0) {
+        header("location: ../add-course.php?error= Course Already Exists");
         exit();
     }
-    if (empty($coursePrereqs)) {
-        header("location: ../add-course.php?error= Course prereqs empty");
-        exit();
-    }
-    if (empty($courseInstructorID)) {
-        header("location: ../add-course.php?error= Course prereqs empty");
-        exit();
-    }
+ 
+    $sql = "SELECT * FROM department WHERE department_name = '$courseDepartment';";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $abrv = $row['department_abrv'] . " " . $courseNumber;
 
     $sql = "INSERT INTO course 
-                VALUES ('$courseID', '$courseTitle', '$courseDescription', '$courseUnits',
-                        '$courseDateTime', '$courseScheduleNum', '$courseDepartment', '$courseLocation',
-                        '$courseIsGraduate', '$coursePrereqs', '$courseInstructorID')";
+                VALUES ('$abrv', 
+                '$courseTitle', 
+                '$courseDescription',
+                 '$courseUnits',
+                        '$courseDepartment',
+                        '$graduate',
+                         '$coursePrereqs')";
 
     $result = $conn->query($sql);
+
+    if($result === true) {
+
+    }
 
     header("location: ../add-course.php");
     exit();

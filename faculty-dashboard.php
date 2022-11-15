@@ -38,9 +38,8 @@
         </a>
         <a href="#">
             <div class="card">
-                <h3>Do Something</h3>
-                <p>Honestly idek. Click for good luck I guess.</p>
-                
+                <h3>Add Class</h3>
+                <p>Add a new class to the catelog of classes avaliable.</p>
             </div>
         </a>
     </div>

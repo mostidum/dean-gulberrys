@@ -14,6 +14,7 @@
 </head>
     <?php
         include('includes/nav.php');
+        include('includes/dbh.php');
     ?>
 
     <body>
@@ -21,40 +22,38 @@
             <div class="register-form">
                 <h1>Add a new course</h1>
                 <form action="add-course-process.php" method="post">
-                    <label for="username">Course ID</label><br>
-                    <input type="number" id="course-id" name="course-id"><br>
-
-                    <label for="password">Course Title</label><br>
+                    <label for="course-title">Course Title</label><br>
                     <input type="text" id="course-title" name="course-title"><br>
                     
-                    <label for="password">Course Description</label><br>
+                    <label for="course-description">Course Description</label><br>
                     <input type="text" id="course-description" name="course-description"><br>
                     
-                    <label for="confirmPass">Units</label><br>
+                    <label for="units">Units</label><br>
                     <input type="number" id="units" name="units"><br>
-                    
-                    <label for="name">Date and Time</label><br>
-                    <input type="datetime-local" id="date-time" name="date-time"><br>
 
-                    <label for="phone">Schedule Number</label><br>
-                    <input type="int" id="schedule" name="schedule"><br>
+                    <label for="department">Department</label><br>
+                    <select id="department" name="department">
+                        <?php
+                            $sql = "SELECT * FROM department";
+                            $result = mysqli_query($conn, $sql);
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<option>" .$row['department_name']. "</option>";
+                            }
+                        ?>
 
-                    <label for="address">Department</label><br>
-                    <input type="text" id="department" name="department"><br>
+                    </select><br>
 
-                    <label for="birthday">Location</label><br>
-                    <input type="text" id="location" name="location"><br>
-
-                    <label for="major">Is Graduate Course?</label><br>
-                    <input type="int" id="graduate" name="graduate" placeholder="1 for graduate else 0"><br>
-
-                    <label for="minor">Prerequisites</label><br>
+                    <label for="prerequisites">Prerequisites</label><br>
                     <input type="text" id="prerequisites" name="prerequisites"><br>
 
-                    <label for="minor">Instructor ID</label><br>
-                    <input type="text" id="instructor-id" name="instructor-id"><br>
+                    <label for="course-number">Course Number</label><br>
+                    <input type="number" id="course-number" name="course-number" min="10" max="999"><br>
+
+                    <label for="graduate">Is Graduate Course?</label>
+                    <input type="checkbox" id="graduate" name="graduate" placeholder="1 for graduate else 0"><br>
 
                     <br><button type="submit" id="button" name="submit">Add Course</button>
+
                     <p1 id="errorMessage"></p1>
                 </form>
             </div>

@@ -27,7 +27,7 @@
         }
         return true;
     }
-    
+
     function createStudent($conn, $username, $password, $name, $phone, $address, $birthday, $major, $minor) {
         $sqlStudent = "INSERT INTO student (name, phone_number, address, birthday, major, minor) VALUES('$name', '$phone', '$address', '$birthday', '$major', '$minor')";
         $resultStudent = mysqli_query($conn, $sqlStudent);
@@ -46,7 +46,6 @@
     function createFaculty($conn, $username, $password, $name, $position, $phone, $officeNumber, $officeHours, $department) {
         $sqlFaculty = "INSERT INTO faculty (name, position, phone_number, office_number, office_hours, department) VALUES('$name', '$position', '$phone', '$officeNumber', '$officeHours', '$department')";
         $resultFaculty = mysqli_query($conn, $sqlFaculty);
-        echo "<script>console.log('Here');</script>";
         if($resultFaculty === false) {
             exit();
         }

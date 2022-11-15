@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration</title>
-    <link rel="stylesheet" href="css/styles.css">
 </head>
     <?php
         include('includes/nav.php');
@@ -17,44 +16,107 @@
     ?>
 
     <body>
-        <div class="register-container">
-            <div class="register-form">
-                <h1> Register a new student account</h1>
-                <p>Already have an account? <a href="login.php">Log in</a></p>
-                <form action="student-register-process.php" method="post">
+    <section class="vh-100 mt-4">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                                    <form class="mx-1 mx-md-4" action="student-register-process.php" method="post">
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                            <input type="text" name="username" class="form-control" />
+                                            <label class="form-label" for="username">Username</label>
+                                            </div>
+                                        </div>
 
-                    <label for="username">Username:</label><br>
-                    <input type="text" name="username"><br>
-                    
-                    <label for="password">Password:</label><br>
-                    <input type="password" name="password"><br>
-                    
-                    <label for="confirmPass">Confirm Password:</label><br>
-                    <input type="password" name="confirmPass"><br>
-                    
-                    <label for="name">Name:</label><br>
-                    <input type="text" name="name"><br>
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                            <input type="password" name="password" class="form-control" />
+                                            <label class="form-label" name="password">Password</label>
+                                            </div>
+                                        </div>
 
-                    <label for="phone">Phone Number:</label><br>
-                    <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"><br>
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                            <input type="password" name="confirmPass" class="form-control" />
+                                            <label class="form-label" name="confirmPass">Confirm Password</label>
+                                            </div>
+                                        </div>
 
-                    <label for="address">Address:</label><br>
-                    <input type="text" name="address"><br>
 
-                    <label for="birthday">Birthday:</label><br>
-                    <input type="date" name="birthday"><br>
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                            <input type="text" name="name" class="form-control" />
+                                            <label class="form-label" for="name">Name</label>
+                                            </div>
+                                        </div>
 
-                    <label for="major">Major:</label><br>
-                    <input type="text" name="major"><br>
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                            <input type="tel" name="phone" class="form-control" />
+                                            <label class="form-label" for="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">Phone</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                            <input type="text" name="address" class="form-control" />
+                                            <label class="form-label" for="address">Address</label>
+                                            </div>
+                                        </div>
 
-                    <label for="minor">Minor:</label><br>
-                    <input type="text" name="minor"><br>
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                            <input type="date" name="birthday" class="form-control" />
+                                            <label class="form-label" for="birthday">Birthday</label>
+                                            </div>
+                                        </div>
 
-                    <br><button type="submit" name="submit">Register</button>
-                    <p1 id="errorMessage"></p1>
-                </form>
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                            <input type="text" name="major" class="form-control" />
+                                            <label class="form-label" for="major">Major</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                            <input type="text" name="minor" class="form-control" />
+                                            <label class="form-label" for="minor">minor</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="submit" class="btn btn-primary btn-lg" name="submit">Register</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                    <img src="assets/universitySeal.png"
+                                    class="img-fluid" alt="Sample image">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
     </body>
 
     <php>

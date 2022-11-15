@@ -52,7 +52,7 @@
     <?php
         include_once('includes/dbh.php');
 
-        $query = '%'.$search.'%';
+        //$query = '%'.$search.'%';
         //Searches for query in Course Title, Course Description, and Course Department 
         //$sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
         $student_id = $_SESSION["uid"];

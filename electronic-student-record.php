@@ -31,7 +31,7 @@
             <th scope="col">Student Minor</th>
             <th scope="col">Is a Graduate?</th>
             <th scope="col">Additional Notes</th>
-            <th scope="col"></th>
+            <th scope="col">
         </tr>
     </thead>
     <?php

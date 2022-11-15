@@ -6,7 +6,6 @@
         $name = $_POST["name"];
         $position = $_POST["position"];
         $phone = $_POST["phone"];
-        $officeNumber = $_POST["officeNumber"];
         $department = $_POST["department"];
         
         require_once "includes/dbh.php";
@@ -37,10 +36,6 @@
             header("location: faculty-registration.php?error=emptyPhone");
             exit();
         }
-        if(empty($officeNumber) !== false){
-            header("location: faculty-registration.php?error=emptyOfficeNumber");
-            exit();
-        }
         if(empty($department) !== false){
             header("location: faculty-registration.php?error=emptyDepartment");
             exit();
@@ -69,7 +64,7 @@
         }
 
         //Creates a new user in the database
-        $newUser = createFaculty($conn, $username, $password, $name, $position, $phone, $officeNumber, $department);
+        $newUser = createFaculty($conn, $username, $password, $name, $position, $phone, $department);
     
         if($newUser === true) {
             header("location: login.php");

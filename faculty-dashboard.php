@@ -66,6 +66,17 @@
             </div>
             </div>
         </div>
+        <div class="col">
+            <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Office Hours</h5>
+                <p class="card-text">Updated avaliable office hours and change office location.</p>
+                <form action="office-hours.php">
+                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" id="button" name="submit">Go</button>
+                </form>
+            </div>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -19,7 +19,7 @@
     ?>
 
     <h1>Courses</h1>
-    <p>
+    <!-- <p>
     <?php 
         if ($search != "") {
             echo "You searched for: $search";
@@ -30,7 +30,7 @@
         <label>Search</label>
         <input type="text" name="search">
         <input type="submit">
-    </form>
+    </form> -->
 
     <table>
         <tr>

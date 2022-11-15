@@ -65,7 +65,7 @@
         while($row = mysqli_fetch_assoc($result)) {
             $tempid = $_SESSION['uid'];
             $tempCourseID = $row['course_id'];
-            $temp = "SELECT * FROM record where course_id = '$tempCourseID' and student_id = '$tempID'"
+            $temp = "SELECT * FROM record where course_id = '$tempCourseID' and student_id = '$tempid'"
             //if($temp>0)
     ?> 
         <tr>

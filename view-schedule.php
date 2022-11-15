@@ -42,8 +42,8 @@
         $query = '%'.$search.'%';
         //Searches for query in Course Title, Course Description, and Course Department 
         //$sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
-        $sql = "SELECT * FROM course INNER JOIN class on course.course_id = class.course_id INNER JOIN faculty on class.instructor_id = faculty.faculty_id INNER JOIN record on course.course_id = record.course_id";
-        $result = $conn->query($sql);   
+        $student_id = $_SESSION["uid"];
+        $result = $conn->query("SELECT * FROM record INNER JOIN class on record.course_id = class.course_id INNER JOIN course on record.course_id = course.course_id INNER JOIN faculty on class.instructor_id = faculty.faculty_id WHERE record.student_id = '$student_id';");  
         
 
        

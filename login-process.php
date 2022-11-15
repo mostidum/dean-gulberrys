@@ -9,7 +9,7 @@ if (isset($_POST["submit"])){
     $pwd = $_POST["password"];
 
     if (empty($uid) || empty($pwd)){
-        header("location: ../login.php?error= All fields are required");
+        header("location: login.php?error= All fields are required");
         exit();
     }
 
@@ -35,22 +35,22 @@ if (isset($_POST["submit"])){
             $_SESSION["account-type"] = $accountType;
 
             if ($accountType == "student"){
-                header("location: ../student-dashboard.php");
+                header("location: student-dashboard.php");
                 exit();
             }
             else {
-                header("location: ../faculty-dashboard.php");
+                header("location: faculty-dashboard.php");
                 exit();
             }
             
         }
         else {
-            header("location: ../login.php?error=Incorrect password");
+            header("location: login.php?error=Incorrect password");
             exit();
         }
     }
     else {
-        header("location: ../login.php?error=No account found");
+        header("location: login.php?error=No account found");
         exit();
     }
 

@@ -3,7 +3,7 @@
     include 'includes/session-check-block-student.php';
     //If NOT logged in --> send to login page
     if (!isset($_SESSION["uid"])){
-        header("location: ../login.php");
+        header("location: /login.php");
     }
 ?>
 

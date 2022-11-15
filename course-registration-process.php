@@ -7,11 +7,10 @@
         $courseID = $_POST["course-id"];
         $studentID = $_SESSION["uid"];
         
-        $sql = "INSERT INTO registered (student_id, course_id) VALUES ('$studentID', '$courseID')";
-
+        $sql = "INSERT INTO record (student_id, course_id) VALUES ('$studentID', '$courseID')";
         $result = $conn->query($sql);
 
-        header("location: ../course-registration.php");
+        header("location: student-dashboard.php");
         exit();
     }
 ?>

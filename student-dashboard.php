@@ -3,7 +3,7 @@
     include 'includes/session-check-block-faculty.php';
     //If NOT logged in --> send to login page
     if (!isset($_SESSION["uid"])){
-        header("location: ../login.php");
+        header("location: /login.php");
     }
 ?>
 
@@ -49,7 +49,7 @@
                 <div class="card-body">
                     <h5 class="card-title">View Schedule</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                    <form action="#">
+                    <form action="view-schedule.php">
                         <button class="btn btn-outline-dark btn-lg px-5" type="submit" id="button" name="submit">Go</button>
                     </form>
                 </div>

@@ -51,11 +51,15 @@
         include_once('includes/dbh.php');
 
         $query = '%'.$search.'%';
-        //Searches for query in Course Title, Course Description, and Course Department
-        $sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
+        //Searches for query in Course Title, Course Description, and Course Department 
+        //$sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
+        $sql = "SELECT * FROM course INNER JOIN class on course.course_id = class.course_id";
         $result = $conn->query($sql);   
+        
 
-        while ($row = mysqli_fetch_assoc($result)) {
+       
+
+        while($row = mysqli_fetch_assoc($result)) {
     ?>
         <tr>
             <form action="course-registration-process.php" method="post">
@@ -64,7 +68,7 @@
                 <td><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["course_description"]?></td>
                 <td><?php echo $row["units"]?></td>
-                <td><?php echo $row["datetime"]?></td>
+                <td><?php echo $row["time_start"]?></td>
                 <td><?php echo $row["schedule"]?></td>
                 <td><?php echo $row["department"]?></td>
                 <td><?php echo $row["location"]?></td>

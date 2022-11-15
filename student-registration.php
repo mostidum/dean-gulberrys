@@ -95,7 +95,7 @@
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                             <input type="text" name="minor" class="form-control" />
-                                            <label class="form-label" for="minor">minor</label>
+                                            <label class="form-label" for="minor">Minor</label>
                                             </div>
                                         </div>
 

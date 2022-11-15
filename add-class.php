@@ -1,4 +1,3 @@
-<<<<<<< HEAD:add-class.php
 <?php
 session_start();
 include 'includes/session-check-block-student.php';

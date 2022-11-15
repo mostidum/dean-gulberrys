@@ -58,6 +58,21 @@
     ?>
     </table>
 
+<h1>Majors</h1>
+
+<table class="table ">
+    <thead>
+        <tr>
+            
+            <th scope="col">Student Name</th>
+            <th scope="col">Student ID</th>
+            <th scope="col">Major ID</th>
+            <th scope="col">Major Title</th>
+            <th scope="col">Department</th>
+            <th scope="col">Units Required</th>
+        </tr>
+    </thead> 
+
 <!-- Card ends here -->
     <?php
         include('includes/footer.php');

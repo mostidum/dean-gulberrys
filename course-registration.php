@@ -62,10 +62,6 @@
         $sql = "SELECT * FROM course JOIN class ON course.course_id = class.course_id JOIN record ON class.course_id=record.course_id WHERE NOT student_id = '$student_id'";
         $result = $conn->query($sql);   
         while($row = mysqli_fetch_assoc($result)) {
-            $tempid = $_SESSION['uid'];
-            $tempCourseID = $row['course_id'];
-            $temp = "SELECT * FROM record where course_id = '$tempCourseID' and student_id = '$tempid'"
-            //if($temp>0)
     ?> 
         <tr>
             <form action="course-registration-process.php" method="post">

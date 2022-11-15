@@ -23,6 +23,10 @@ Dark Brown: #725b3f
     /* cursor: url("assets/poop-emoji.png"), auto;	 */
 }
 
+body {
+    padding-bottom: 70px;
+}
+
 /* USED TO REMOVE ARROWS FROM INPUT FIELD - START */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

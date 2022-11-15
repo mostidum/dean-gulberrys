@@ -19,18 +19,18 @@
     ?>
 
     <h1>Courses</h1>
-    <p>
+    <!-- <p>
     <?php 
         // if ($search != "") {
         //     echo "You searched for: $search";
         // }
     ?>
     </p>
-    <!-- <form action="course-registration.php">
+    < <form action="course-registration.php">
         <label>Search</label>
         <input type="text" name="search">
         <input type="submit">
-    </form> -->
+    </form> !-->
 
     <table class="table table-dark">
     <thead>
@@ -52,7 +52,7 @@
     <?php
         include_once('includes/dbh.php');
 
-        $query = '%'.$search.'%';
+        //$query = '%'.$search.'%';
         //Searches for query in Course Title, Course Description, and Course Department 
         //$sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
         $student_id = $_SESSION["uid"];
@@ -63,7 +63,11 @@
        
 
         while($row = mysqli_fetch_assoc($result)) {
-    ?>
+            $tempid = $_SESSION['uid'];
+            $tempCourseID = $row['course_id'];
+            $temp = "SELECT * FROM record where course_id = '$tempCourseID' and student_id = '$tempID'"
+            //if($temp>0)
+    ?> 
         <tr>
             <form action="course-registration-process.php" method="post">
                 <td><button class="btn btn-secondary" name="sign-up">Sign up</button></td>
@@ -71,7 +75,7 @@
                 <td><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["course_description"]?></td>
                 <td><?php echo $row["units"]?></td>
-                <td><?php echo $row["days"].": ".$row["time_start"]."-".$row["time_end"]?></td>
+                <td><?php echo $row["time_start"]?></td>
                 <td><?php echo $row["schedule"]?></td>
                 <td><?php echo $row["department"]?></td>
                 <td><?php echo $row["location"]?></td>
@@ -80,6 +84,7 @@
                 <td><?php echo $row["instructor_id"]?></td>
             </form>
         </tr>
+        </tbody>
         <?php
             }
         ?>

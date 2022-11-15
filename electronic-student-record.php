@@ -31,6 +31,7 @@
             <th scope="col">Student Minor</th>
             <th scope="col">Is a Graduate?</th>
             <th scope="col">Additional Notes</th>
+            <th scope="col"></th>
 
         </tr>
     </thead>
@@ -40,15 +41,18 @@
         while ($row = mysqli_fetch_assoc($result)) {
     ?>
         <tr>
-            <td><?php echo $row["student_id"]?></td>
-            <td><?php echo $row["name"]?></td>
-            <td><?php echo $row["phone_number"]?></td>
-            <td><?php echo $row["address"]?></td>
-            <td><?php echo $row["birthday"]?></td>
-            <td><?php echo $row["major"]?></td>
-            <td><?php echo $row["minor"]?></td>
-            <td><?php echo $row["graduate"]?></td>
-            <td><?php echo $row["notes"]?></td>
+            <form action="edit-student-record.php" method="post">
+                <td><input type="hidden" value=<?php echo $row["student_id"]?> name="student-id"><?php echo $row["student_id"]?></td>
+                <td><input type="hidden" value=<?php echo $row["name"]?> name="name"><?php echo $row["name"]?></td>
+                <td><input type="hidden" value=<?php echo $row["phone_number"]?> name="phone_number"><?php echo $row["phone_number"]?></td>
+                <td><input type="hidden" value=<?php echo $row["address"]?> name="address"><?php echo $row["address"]?></td>
+                <td><input type="hidden" value=<?php echo $row["birthday"]?> name="birthday"><?php echo $row["birthday"]?></td>
+                <td><input type="hidden" value=<?php echo $row["major"]?> name="major"><?php echo $row["major"]?></td>
+                <td><input type="hidden" value=<?php echo $row["minor"]?> name="minor"><?php echo $row["minor"]?></td>
+                <td><input type="hidden" value=<?php echo $row["graduate"]?> name="graduate"><?php echo $row["graduate"]?></td>
+                <td><input type="hidden" value=<?php echo $row["notes"]?> name="notes"><?php echo $row["notes"]?></td>
+                <td><button class="btn btn-secondary" name="edit-student">Edit Student</button></td>
+            </form>
         </tr>
         <?php
             }

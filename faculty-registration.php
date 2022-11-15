@@ -61,7 +61,11 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                            <input type="text" name="position" class="form-control" />
+                                            <select name="position" class="form-control">
+                                                <option></option>
+                                                <option>Professor</option>
+                                                <option>Advisor</option>
+                                            </select>
                                             <label class="form-label" for="position">Position</label>
                                             </div>
                                         </div>
@@ -85,16 +89,8 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                            <input type="datetime-local" name="officeHours" class="form-control" />
-                                            <label class="form-label" for="officeHours">Office Hours</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex flex-row align-items-center mb-4">
-                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                                            <div class="form-outline flex-fill mb-0">
                                             <select name="department" class="form-control">
-                                                <option>-- Select Department --</option>
+                                                <option></option>
                                                 <?php
                                                     $sql = "SELECT * FROM department";
                                                     $result = mysqli_query($conn, $sql);

@@ -24,6 +24,7 @@
     <table>
         <tr>
             <th>Select</th>
+            <th>Grade</th>
             <th>Course ID</th>
             <th>Course Title</th>
             <th>Course Description</th>
@@ -42,8 +43,8 @@
         $query = '%'.$search.'%';
         //Searches for query in Course Title, Course Description, and Course Department 
         //$sql = "SELECT * FROM course WHERE course_title LIKE '$query' OR course_description LIKE '$query' OR department LIKE '$query'";
-        $sql = "SELECT * FROM course INNER JOIN class on course.course_id = class.course_id INNER JOIN faculty on class.instructor_id = faculty.faculty_id INNER JOIN record on course.course_id = record.course_id";
-        $result = $conn->query($sql);   
+        $student_id = $_SESSION["uid"];
+        $result = $conn->query("SELECT * FROM record INNER JOIN class on record.course_id = class.course_id INNER JOIN course on record.course_id = course.course_id INNER JOIN faculty on class.instructor_id = faculty.faculty_id WHERE record.student_id = '$student_id';");  
         
 
        
@@ -53,6 +54,7 @@
         <tr>
             <form action="remove-class.php" method="post">
                 <td><button name="sign-up">remove</button></td>
+                <td><?php echo $row["grade"]?></td>
                 <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_id"]?></td>
                 <td><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["course_description"]?></td>

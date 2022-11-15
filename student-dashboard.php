@@ -37,7 +37,7 @@
         <div class="card h-100">
             <div class="card-body">
                 <h5 class="card-title">Major Course</h5>
-                <p class="card-text">Check how many more long, miserable classes you have left in your degree. Look at this to contemplate committing scooter ankle!</p>
+                <p class="card-text">Check out your complete degree evaulation and calculate the required courses to finish your college path</p>
                 <form action="major-course-requirements.php">
                     <button class="btn btn-outline-dark btn-lg px-5" type="submit" id="button" name="submit">Go</button>
                 </form>
@@ -48,7 +48,7 @@
             <div class="card h-100">
                 <div class="card-body">
                     <h5 class="card-title">View Schedule</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">Check to see your class grades, remove a class, or view class info </p>
                     <form action="view-schedule.php">
                         <button class="btn btn-outline-dark btn-lg px-5" type="submit" id="button" name="submit">Go</button>
                     </form>

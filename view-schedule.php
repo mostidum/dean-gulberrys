@@ -23,6 +23,7 @@
 
     <table>
         <tr>
+            <th>Select</th>
             <th>Course ID</th>
             <th>Course Title</th>
             <th>Course Description</th>
@@ -50,7 +51,8 @@
         while($row = mysqli_fetch_assoc($result)) {
     ?>
         <tr>
-            <form action="course-registration-process.php" method="post">
+            <form action="remove-class.php" method="post">
+                <td><button name="sign-up">remove</button></td>
                 <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_id"]?></td>
                 <td><?php echo $row["course_title"]?></td>
                 <td><?php echo $row["course_description"]?></td>

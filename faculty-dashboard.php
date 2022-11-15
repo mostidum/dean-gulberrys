@@ -44,6 +44,17 @@
             </div>
             </div>
         </div>
+        <div class="col">
+            <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Edit Grades</h5>
+                <p class="card-text">Edit student grades.</p>
+                <form action="#">
+                    <button class="btn btn-outline-dark btn-lg px-5" type="submit" id="button" name="submit">Go</button>
+                </form>
+            </div>
+            </div>
+        </div>
     </div>
 </div>
 

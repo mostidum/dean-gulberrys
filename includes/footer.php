@@ -10,7 +10,7 @@
   <!-- Copyright -->
   <div class="text-center p-3"> 
     © 2022 Copyright:
-    <a class="text-dark" href="/index.php">DeanGulberry.com</a>
+    <a class="text-dark" href="/login.php">DeanGulberry.com</a>
   </div>
   <!-- Copyright -->
 </footer>

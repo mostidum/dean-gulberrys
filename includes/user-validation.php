@@ -28,10 +28,6 @@
         return true;
     }
 
-    function validDepartment($department){
-        return $department != "-- Select Department --";
-    }
-
     function createStudent($conn, $username, $password, $name, $phone, $address, $birthday, $major, $minor) {
         $sqlStudent = "INSERT INTO student (name, phone_number, address, birthday, major, minor) VALUES('$name', '$phone', '$address', '$birthday', '$major', '$minor')";
         $resultStudent = mysqli_query($conn, $sqlStudent);
@@ -47,8 +43,8 @@
         return mysqli_query($conn, $sqlUser);
     }
 
-    function createFaculty($conn, $username, $password, $name, $position, $phone, $officeNumber, $officeHours, $department) {
-        $sqlFaculty = "INSERT INTO faculty (name, position, phone_number, office_number, office_hours, department) VALUES('$name', '$position', '$phone', '$officeNumber', '$officeHours', '$department')";
+    function createFaculty($conn, $username, $password, $name, $position, $phone, $officeNumber, $department) {
+        $sqlFaculty = "INSERT INTO faculty (name, position, phone_number, office_number, department) VALUES('$name', '$position', '$phone', '$officeNumber', '$department')";
         $resultFaculty = mysqli_query($conn, $sqlFaculty);
         if($resultFaculty === false) {
             exit();

@@ -2,7 +2,7 @@
     session_start();
     require_once "includes/dbh.php";
 
-    if(isset($_POST["sign-up"])) { 
+    if(isset($_POST["removeClass"])) { 
             // trying to get course id from the course table
             $course_id = $_POST["course-id"];
             $student_id = $_SESSION["uid"];

@@ -128,7 +128,7 @@ select {
     -moz-appearance: textfield;
 }
 
-button {
+/* button {
     color: white;
     background-color: var(--darkBrown);
     padding: .5em;
@@ -138,7 +138,7 @@ button {
 button:hover{
     color: white;
     background-color: var(--brown);
-}
+} */
 
 table, th, td {
     border-collapse: collapse;

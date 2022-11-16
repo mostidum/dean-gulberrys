@@ -19,7 +19,7 @@
         include('includes/nav.php');
     ?>
 
-    <div class="row justify-content-center mx-auto mt-5">
+    <div class="row justify-content-center mx-auto mt-5 "> 
         <div class="col-auto">
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="table-responsive">
+            <div class="table-responsive vh-100 bg-light">
                 <table class="table table-light table-bordered table-sm">
                     <thead>
                         <tr>
@@ -90,7 +90,7 @@
                     
                         <tr>
                             <form action="remove-class.php" method="post">
-                                <td><button tpye="button" class="btn btn-outline-primary btn-sm m-0 waves-effect" name="removeClass">remove</button></td>
+                                <td><button class="btn btn-outline-primary btn-sm m-0 waves-effect" name="removeClass">remove</button></td>
                                 <td><?php echo $row["grade"]?></td>
                                 <td><input type="hidden" value=<?php echo $row["course_id"]?> name="course-id"><?php echo $row["course_id"]?></td>
                                 <td><?php echo $row["course_title"]?></td>

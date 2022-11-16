@@ -47,8 +47,8 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">View Schedule</h5>
-                    <p class="card-text">Check to see your class grades, remove a class, or view class info </p>
+                    <h5 class="card-title">View Courses</h5>
+                    <p class="card-text">Review your grades, remove classes and view class info for past and current classes. </p>
                     <form action="view-schedule.php">
                         <button class="btn btn-outline-dark btn-lg px-5" type="submit" id="button" name="submit">Go</button>
                     </form>

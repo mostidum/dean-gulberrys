@@ -134,6 +134,49 @@
                 </div>
             </div>
         </div>
+    <?php 
+        if(isset($_GET["error"]))
+        {
+
+            if($_GET["error"] == "emptyUsername"){
+                echo "<p>Username is empty</p>";
+            }
+            if($_GET["error"] == "emptyPassword"){
+                echo "<p>Password is empty</p>";
+            }
+            if($_GET["error"] == "emptyConfirmPass"){
+                echo "<p>Confirm Password is empty</p>";
+            }
+            if($_GET["error"] == "emptyName"){
+                echo "<p>Name is empty</p>";
+            }
+            if($_GET["error"] == "emptyPhone"){
+                echo "<p>Phone is empty</p>";
+            }
+            if($_GET["error"] == "emptyAddress"){
+                echo "<p>Address is empty</p>";
+            }
+            if($_GET["error"] == "emptyBirthday"){
+                echo "<p>Birthday is empty</p>";
+            }
+            if($_GET["error"] == "invalidUsername"){
+                echo "<p>Username is invalid</p>";
+            }
+            if($_GET["error"] == "invalidPassword"){
+                echo "<p>Password is invalid</p>";
+            }
+            if($_GET["error"] == "passwordsDontMatch"){
+                echo "<p>Passwords don't match</p>";
+            }
+            if($_GET["error"] == "usernameTaken"){
+                echo "<p>Username is taken</p>";
+            }
+            if($_GET["error"] == "couldNotCreateAccount"){
+                echo "<p>Could not create account</p>";
+            }
+        }
+    ?>
+
     </section>
     </body>
 
